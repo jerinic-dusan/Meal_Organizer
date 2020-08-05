@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_1"
+        android:icon="@drawable/ic_todays_meals"
+        android:title="@string/today_s_meals" />
+
+    <item
+        android:id="@+id/nav_2"
+        android:icon="@drawable/ic_existing_meals"
+        android:title="@string/existing_meals"
+        />
+
+    <item
+        android:id="@+id/nav_3"
+        android:icon="@drawable/ic_progress"
+        android:title="@string/your_progress"
+        />
+
+    <item
+        android:id="@+id/nav_4"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/your_profile"
+        />
+
+</menu>

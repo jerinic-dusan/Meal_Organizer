@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@color/colorBackgroundLightOpacity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/meal_title"
+            android:layout_width="245dp"
+            android:layout_height="40dp"
+            android:background="@null"
+            android:gravity="center"
+            android:lines="1"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/meal_carbs"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintTop_toBottomOf="@+id/horizontal_sep_1"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/meal_carbs_text"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="@string/carbs"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintTop_toBottomOf="@+id/meal_carbs"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/meal_protein"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintTop_toBottomOf="@+id/horizontal_sep_1"
+            app:layout_constraintStart_toEndOf="@+id/vertical_sep_1"
+            />
+
+        <TextView
+            android:id="@+id/meal_protein_text"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="@string/protein"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintTop_toBottomOf="@+id/meal_protein"
+            app:layout_constraintStart_toEndOf="@+id/vertical_sep_1"
+            />
+
+        <TextView
+            android:id="@+id/meal_fat"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintTop_toBottomOf="@+id/horizontal_sep_1"
+            app:layout_constraintStart_toEndOf="@+id/vertical_sep_2"
+            />
+
+        <TextView
+            android:id="@+id/meal_fat_text"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="@string/fat"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintTop_toBottomOf="@+id/meal_fat"
+            app:layout_constraintStart_toEndOf="@+id/vertical_sep_2"
+            />
+
+        <View
+            android:id="@+id/vertical_sep_1"
+            android:layout_width="1dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintStart_toEndOf="@+id/meal_carbs"
+            app:layout_constraintTop_toBottomOf="@+id/horizontal_sep_1" />
+
+        <View
+            android:id="@+id/vertical_sep_2"
+            android:layout_width="1dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintStart_toEndOf="@+id/meal_protein"
+            app:layout_constraintTop_toBottomOf="@+id/horizontal_sep_1" />
+
+        <View
+            android:id="@+id/horizontal_sep_1"
+            android:layout_width="230dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="5dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/meal_title" />
+
+        <Button
+            android:id="@+id/delete_meal"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/ic_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/edit_meal"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/ic_edit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/delete_meal" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

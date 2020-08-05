@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#bb86fc</color>
+    <color name="colorPrimaryDark">#8858c8</color>
+    <color name="colorPrimaryLight">#efb7ff</color>
+    <color name="colorAccent">#03dac6</color>
+    <color name="colorAccentDark">#00a896</color>
+    <color name="colorAccentLight">#66fff9</color>
+    <color name="colorBackground">#121212</color>
+    <color name="colorBackgroundLight">#212121</color>
+    <color name="colorTextPrimary">#ffffff</color>
+    <color name="colorTextSecondary">#ffffff</color>
+
+    <color name="colorBackgroundLightOpacity">#F2212121</color>
+    <color name="colorBackgroundLightOpacity2">#E6212121</color>
 </resources>
+
+<!--    100% — FF-->
+<!--    95% — F2-->
+<!--    90% — E6-->
+<!--    85% — D9-->
+<!--    80% — CC-->
+<!--    75% — BF-->
+<!--    70% — B3-->
+<!--    65% — A6-->
+<!--    60% — 99-->
+<!--    55% — 8C-->
+<!--    50% — 80-->
+<!--    45% — 73-->
+<!--    40% — 66-->
+<!--    35% — 59-->
+<!--    30% — 4D-->
+<!--    25% — 40-->
+<!--    20% — 33-->
+<!--    15% — 26-->
+<!--    10% — 1A-->
+<!--    5% — 0D-->
+<!--    0% — 00-->
