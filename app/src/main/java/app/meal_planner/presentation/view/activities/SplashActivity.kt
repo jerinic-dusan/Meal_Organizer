@@ -32,6 +32,7 @@ class SplashActivity : AppCompatActivity(R.layout.activity_splash){
             startActivity(intent)
             finish()
         })
+        userDataViewModel.getRemainingData()
         userDataViewModel.getExistingData()
     }
 }

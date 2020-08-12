@@ -1,6 +1,5 @@
 package app.meal_planner.presentation.view.activities
 
-import android.graphics.pdf.PdfDocument
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import app.meal_planner.R

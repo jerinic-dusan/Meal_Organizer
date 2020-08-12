@@ -7,16 +7,11 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import app.meal_planner.R
-import app.meal_planner.presentation.contract.KcalDataContract
 import app.meal_planner.presentation.contract.UserDataContract
 import app.meal_planner.presentation.view.activities.CalculatorActivity
-import app.meal_planner.presentation.view.activities.MainActivity
-import app.meal_planner.presentation.viewmodel.KcalDataViewModel
 import app.meal_planner.presentation.viewmodel.UserDataViewModel
 import kotlinx.android.synthetic.main.fragment_profile.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
-import java.math.BigDecimal
 import java.math.RoundingMode
 import java.text.DecimalFormat
 import kotlin.math.roundToInt

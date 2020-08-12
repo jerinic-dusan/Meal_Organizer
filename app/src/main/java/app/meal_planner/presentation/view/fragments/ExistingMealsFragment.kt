@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.observe
 import app.meal_planner.R
 import app.meal_planner.presentation.contract.MealsContract
 import app.meal_planner.presentation.view.activities.AddMealActivity
@@ -14,12 +13,12 @@ import kotlinx.android.synthetic.main.fragment_existing_meals.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import app.meal_planner.data.models.Meal
 import app.meal_planner.data.models.MealEntity
 import app.meal_planner.data.models.MealWithItems
 import app.meal_planner.presentation.view.recycler.adapter.ExistingMealsAdapter
 import app.meal_planner.presentation.view.recycler.diff.ExistingMealsDiffItemCallback
 import app.meal_planner.presentation.view.states.MealState
+import timber.log.Timber
 
 class ExistingMealsFragment : Fragment(R.layout.fragment_existing_meals) {
 
@@ -47,10 +46,15 @@ class ExistingMealsFragment : Fragment(R.layout.fragment_existing_meals) {
             {
                 mealViewModel.updateMeal(MealEntity(it.meal.id, it.meal.name, it.meal.kcal, it.meal.carbs, it.meal.protein, it.meal.fat, it.meal.today, false, it.meal.date))
                 Toast.makeText(context, "Removed ${it.meal.name} from existing meals.", Toast.LENGTH_SHORT).show()
+                Timber.e("${it.meal}")
             },
             {
-                //TODO Edit
+                val intent = Intent(context, AddMealActivity::class.java)
+                intent.putExtra(TodaysMealsFragment.MESSAGE_ADD_MEAL, "Existing_Edit")
+                intent.putExtra(TodaysMealsFragment.MESSAGE_EDIT_MEAL, it)
+                startActivity(intent)
             })
+        existingMealsAdapter.notifyDataSetChanged()
         recycler_existing_meals.adapter = existingMealsAdapter
     }
 

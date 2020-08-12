@@ -4,16 +4,12 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.*
 
-@Entity(tableName = "meals")
-data class MealEntity(
-    @PrimaryKey(autoGenerate = true)
-    val id: Long,
-    val name: String,
+@Entity(tableName = "daily_report")
+data class DailyReportEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long,
     val kcal: Int,
     val carbs: Int,
     val protein: Int,
     val fat: Int,
-    val today: Boolean = false,
-    val existing: Boolean = false,
     val date: Date = Date()
 )

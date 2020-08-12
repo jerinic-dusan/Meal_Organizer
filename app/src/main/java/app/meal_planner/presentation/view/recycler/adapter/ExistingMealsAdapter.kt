@@ -4,11 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import app.meal_planner.R
-import app.meal_planner.data.models.Meal
 import app.meal_planner.data.models.MealWithItems
 import app.meal_planner.presentation.view.recycler.diff.ExistingMealsDiffItemCallback
 import app.meal_planner.presentation.view.recycler.viewholder.ExistingMealsViewHolder
-import app.meal_planner.presentation.view.recycler.viewholder.TodaysMealsViewHolder
 
 class ExistingMealsAdapter(existingMealsDiffItemCallback: ExistingMealsDiffItemCallback,
                            private val swipeMeal: (MealWithItems) -> Unit,

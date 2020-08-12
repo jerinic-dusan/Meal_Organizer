@@ -1,15 +1,12 @@
 package app.meal_planner.presentation.view.recycler.viewholder
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.recyclerview.widget.RecyclerView
 import app.meal_planner.R
 import app.meal_planner.data.models.MealWithItems
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.activity_add_meal.*
 import kotlinx.android.synthetic.main.existing_meals_item.*
 import kotlinx.android.synthetic.main.existing_meals_item.parent_linear_layout
 import kotlinx.android.synthetic.main.ingredient_item_card.view.*
@@ -28,6 +25,7 @@ class ExistingMealsViewHolder(override val containerView: View,
     @SuppressLint("InflateParams")
     fun bind(mealWithItems: MealWithItems){
         meal_title.text = mealWithItems.meal.name
+        parent_linear_layout!!.removeAllViews()
         mealWithItems.items.forEach {
             val inflater = LayoutInflater.from(containerView.context)
             val rowView: View = inflater.inflate(R.layout.ingredient_item_card, null)

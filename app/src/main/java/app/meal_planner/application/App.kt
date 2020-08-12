@@ -1,7 +1,6 @@
 package app.meal_planner.application
 
 import android.app.Application
-import android.util.Log.DEBUG
 import app.meal_planner.modules.*
 import com.facebook.stetho.Stetho
 import org.koin.android.ext.koin.androidContext
@@ -36,7 +35,7 @@ class App : Application() {
             userModule,
             kcalModule,
             mealModule,
-            itemsModule
+            dailyReportModule
         )
         startKoin {
             androidLogger(Level.DEBUG)

@@ -53,4 +53,11 @@
     <string name="example_fat">Fat</string>
     <string name="add_meal_to_existing_meals">Add meal to existing meals for future use</string>
 
+    <string-array name="spinner_items">
+        <item>Calories</item>
+        <item>Carbohydrates</item>
+        <item>Protein</item>
+        <item>Fat</item>
+    </string-array>
+
 </resources>

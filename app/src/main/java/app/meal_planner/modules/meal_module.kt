@@ -8,7 +8,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val mealModule = module {
-    viewModel { MealsViewModel(mealRepository = get(), itemRepository = get()) }
+    viewModel { MealsViewModel(mealRepository = get()) }
     single<MealRepository> {MealRepositoryImpl(mealsDataSource = get())}
     single { get<MainDataBase>().getMealsDao() }
 }

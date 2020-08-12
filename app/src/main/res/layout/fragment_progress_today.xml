@@ -1,22 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/transparent">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/today"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="27sp"
         android:layout_margin="10dp"
         android:background="@drawable/round_text_view"
         android:gravity="center_horizontal|center_vertical"
+        android:text="@string/today"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="27sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/progress_today"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/round_text_view"
+        android:dropDownWidth="match_parent"
+        android:dropDownVerticalOffset="1dp"
+        android:popupBackground="@drawable/round_image_view"
+        android:popupElevation="5dp"
+        android:spinnerMode="dropdown"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="26sp"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.mikhaellopez.circularprogressbar.CircularProgressBar
+        android:id="@+id/circularProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cpb_background_progressbar_color="@color/colorBackgroundLightOpacity"
+        app:cpb_background_progressbar_color_start="@color/colorBackgroundLight"
+        app:cpb_background_progressbar_color_end="@color/colorBackgroundLightOpacity"
+        app:cpb_background_progressbar_width="25dp"
+        app:cpb_progress_direction="to_right"
+        app:cpb_progressbar_color_start="@color/colorTextPrimary"
+        app:cpb_progressbar_color_end="@color/colorPrimaryLight"
+        app:cpb_progressbar_width="20dp"
+        app:cpb_round_border="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress_today" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/circularProgressBar"
+        app:layout_constraintEnd_toEndOf="@+id/circularProgressBar"
+        app:layout_constraintStart_toStartOf="@+id/circularProgressBar"
+        app:layout_constraintTop_toTopOf="@+id/circularProgressBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

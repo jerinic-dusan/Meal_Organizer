@@ -2,10 +2,7 @@ package app.meal_planner.presentation.view.recycler.viewholder
 
 import android.annotation.SuppressLint
 import android.view.View
-import androidx.fragment.app.FragmentContainerView
 import androidx.recyclerview.widget.RecyclerView
-import app.meal_planner.data.models.Meal
-import app.meal_planner.data.models.MealEntity
 import app.meal_planner.data.models.MealWithItems
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.todays_meals_item.*

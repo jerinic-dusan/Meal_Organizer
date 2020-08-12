@@ -12,12 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <receiver
-            android:name=".presentation.view.alarms.ResetDailyMeals"
-            android:enabled="true"
-            android:exported="true">
-        </receiver>
-
         <activity android:name=".presentation.view.activities.AddMealActivity"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait"

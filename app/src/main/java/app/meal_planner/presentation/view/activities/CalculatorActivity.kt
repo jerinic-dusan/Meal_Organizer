@@ -9,10 +9,8 @@ import app.meal_planner.R
 import app.meal_planner.data.models.RawData
 import app.meal_planner.data.models.RemainingData
 import app.meal_planner.presentation.contract.KcalDataContract
-import app.meal_planner.presentation.contract.MealsContract
 import app.meal_planner.presentation.contract.UserDataContract
 import app.meal_planner.presentation.viewmodel.KcalDataViewModel
-import app.meal_planner.presentation.viewmodel.MealsViewModel
 import app.meal_planner.presentation.viewmodel.UserDataViewModel
 import kotlinx.android.synthetic.main.activity_calculator.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -21,7 +19,6 @@ class CalculatorActivity : AppCompatActivity(R.layout.activity_calculator) {
 
     private val kcalDataViewModel: KcalDataContract.ViewModel by viewModel<KcalDataViewModel>()
     private val userDataViewModel: UserDataContract.ViewModel by viewModel<UserDataViewModel>()
-    private val mealsViewModel: MealsContract.ViewModel by viewModel<MealsViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,12 +57,12 @@ class CalculatorActivity : AppCompatActivity(R.layout.activity_calculator) {
             if(checkAllFields()){
                 var metric = true
                 var male = true
-                var activity = getActivityLevel()
-                var goal = getGoal()
-                var diet = getDietType()
-                var ageClean = age.text.toString().trim().replace("[^\\d.]", "").toInt()
-                var heightClean = height.text.toString().trim().replace("[^\\d.]", "").toDouble()
-                var weightClean = weight.text.toString().trim().replace("[^\\d.]", "").toInt()
+                val activity = getActivityLevel()
+                val goal = getGoal()
+                val diet = getDietType()
+                val ageClean = age.text.toString().trim().replace("[^\\d.]", "").toInt()
+                val heightClean = height.text.toString().trim().replace("[^\\d.]", "").toDouble()
+                val weightClean = weight.text.toString().trim().replace("[^\\d.]", "").toInt()
 
                 if(metric_or_not.isChecked){ metric = false }
                 if(male_or_female.isChecked){ male = false }
@@ -78,7 +75,7 @@ class CalculatorActivity : AppCompatActivity(R.layout.activity_calculator) {
                 userDataViewModel.setRemainingData(remainingData)
 
                 //Delete everything
-                mealsViewModel.deleteAllMeals()
+                //mealsViewModel.deleteAllMeals()
 
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)

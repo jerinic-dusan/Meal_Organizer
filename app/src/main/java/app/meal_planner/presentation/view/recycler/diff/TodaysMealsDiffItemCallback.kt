@@ -1,10 +1,7 @@
 package app.meal_planner.presentation.view.recycler.diff
 
 import androidx.recyclerview.widget.DiffUtil
-import app.meal_planner.data.models.Meal
-import app.meal_planner.data.models.MealEntity
 import app.meal_planner.data.models.MealWithItems
-import app.meal_planner.data.models.MealWithItemsEntity
 
 class TodaysMealsDiffItemCallback: DiffUtil.ItemCallback<MealWithItems>() {
 

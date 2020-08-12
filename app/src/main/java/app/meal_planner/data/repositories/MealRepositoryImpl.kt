@@ -4,7 +4,6 @@ import app.meal_planner.data.datasources.local.MealsDao
 import app.meal_planner.data.models.*
 import io.reactivex.Completable
 import io.reactivex.Observable
-import io.reactivex.Single
 
 class MealRepositoryImpl(private val mealsDataSource: MealsDao): MealRepository {
 
@@ -23,25 +22,31 @@ class MealRepositoryImpl(private val mealsDataSource: MealsDao): MealRepository 
             }
     }
 
-    override fun insertMeal(mealEntity: MealEntity): Single<Long> {
-        return mealsDataSource.insertMeal(mealEntity)
-    }
-
-    override fun deleteMeal(meal: MealEntity, items: List<ItemEntity>): Completable {
-        return mealsDataSource.deleteMeal(meal, items)
-    }
-
-    override fun deleteAll(): Completable {
-        return mealsDataSource.deleteAll()
-    }
-
-    override fun delete(meal: MealEntity): Completable {
-        return mealsDataSource.updateMeal(meal)
-    }
-
     override fun update(meal: MealEntity): Completable {
         return mealsDataSource.updateMeal(meal)
     }
-}
 
-//Timber.e("$it")
+    override fun updateMeal(mealWithItemsEntity: MealWithItemsEntity): Completable {
+        return Completable.fromCallable {
+            mealsDataSource.update(mealWithItemsEntity)
+        }
+    }
+
+    override fun insert(mealWithItemsEntity: MealWithItemsEntity): Completable {
+        return Completable.fromCallable {
+            mealsDataSource.insert(mealWithItemsEntity)
+        }
+    }
+
+    override fun deleteAll(): Completable {
+        return Completable.fromCallable {
+            mealsDataSource.resetDB()
+        }
+    }
+
+    override fun dailyReset(): Completable {
+        return Completable.fromCallable {
+            mealsDataSource.dailyReset()
+        }
+    }
+}
