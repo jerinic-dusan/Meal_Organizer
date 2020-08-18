@@ -66,16 +66,16 @@ class KcalDataSource: KcalInterface {
         }
 
         when (data.diet) {
-            1 -> {  //40% C, 30% P, 30% F - UNSURE
-                carbohydrates = ((calories * 0.4) / 4).roundToInt()
-                protein = ((calories * 0.3) / 4).roundToInt()
-                fat = ((calories * 0.3) / 9).roundToInt()
+            1 -> {  //50% C, 25% P, 25% F - UNSURE
+                carbohydrates = ((calories * 0.50) / 4).roundToInt()
+                protein = ((calories * 0.25) / 4).roundToInt()
+                fat = ((calories * 0.25) / 9).roundToInt()
                 diet = "Unsure"
             }
-            2 -> {  //47% C, 30% P, 23% F - LOW FAT
-                carbohydrates = ((calories * 0.47) / 4).roundToInt()
-                protein = ((calories * 0.3) / 4).roundToInt()
-                fat = ((calories * 0.23) / 9).roundToInt()
+            2 -> {  //47% C, 30% P, 23% F - LOW FAT (OLD) ----- 53% C, 27% P, 20% F - LOW FAT (NEW)
+                carbohydrates = ((calories * 0.53) / 4).roundToInt()
+                protein = ((calories * 0.27) / 4).roundToInt()
+                fat = ((calories * 0.2) / 9).roundToInt()
                 diet = "Low fat"
             }
             3 -> {  //37% C, 30% P, 33% F - LOW CARB
