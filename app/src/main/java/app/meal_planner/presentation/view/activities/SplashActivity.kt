@@ -10,11 +10,11 @@ import app.meal_planner.presentation.contract.UserDataContract
 import app.meal_planner.presentation.viewmodel.DailyReportViewModel
 import app.meal_planner.presentation.viewmodel.UserDataViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import timber.log.Timber
 
 class SplashActivity : AppCompatActivity(R.layout.activity_splash){
 
     private val userDataViewModel: UserDataContract.ViewModel by viewModel<UserDataViewModel>()
-    private val dailyReportViewModel: DailyReportContract.ViewModel by viewModel<DailyReportViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +27,7 @@ class SplashActivity : AppCompatActivity(R.layout.activity_splash){
 
     private fun checkForFirstTime() {
         userDataViewModel.exists.observe(this, Observer {
-            intent = if (it != null){
+            intent = if (it.calories != 0){
                 Intent(this, MainActivity::class.java)
             }else{
                 Intent(this, IntroActivity::class.java)

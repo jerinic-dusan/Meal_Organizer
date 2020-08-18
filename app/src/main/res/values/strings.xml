@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Meals</string>
+    <string name="app_name">Foods</string>
     <string name="today_s_meals">Today\'s Meals</string>
     <string name="existing_meals">Existing Meals</string>
     <string name="your_progress">Progress</string>

@@ -78,10 +78,10 @@ class KcalDataSource: KcalInterface {
                 fat = ((calories * 0.23) / 9).roundToInt()
                 diet = "Low fat"
             }
-            3 -> {  //25% C, 40% P, 35% F - LOW CARB
-                carbohydrates = ((calories * 0.25) / 4).roundToInt()
-                protein = ((calories * 0.4) / 4).roundToInt()
-                fat = ((calories * 0.35) / 9).roundToInt()
+            3 -> {  //37% C, 30% P, 33% F - LOW CARB
+                carbohydrates = ((calories * 0.37) / 4).roundToInt()
+                protein = ((calories * 0.30) / 4).roundToInt()
+                fat = ((calories * 0.33) / 9).roundToInt()
                 diet = "Low carb"
             }
         }
