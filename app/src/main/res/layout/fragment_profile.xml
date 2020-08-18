@@ -32,95 +32,309 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/profile_pic"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/ic_profile"
-        android:layout_margin="20dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/img_layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/round_text_view"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
-    <TextView
-        android:id="@+id/age_text"
-        android:layout_width="80dp"
+        <ImageView
+            android:id="@+id/profile_pic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_profile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/age_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/age"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="21sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/height_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/height"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="21sp"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weight_text" />
+
+        <TextView
+            android:id="@+id/weight_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/weight"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="21sp"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/age_text" />
+
+        <TextView
+            android:id="@+id/age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="21sp"
+            app:layout_constraintStart_toEndOf="@+id/age_text"
+            app:layout_constraintTop_toTopOf="parent"  />
+
+        <TextView
+            android:id="@+id/height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="21sp"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@+id/height_text"
+            app:layout_constraintTop_toBottomOf="@+id/weight_text" />
+
+        <TextView
+            android:id="@+id/weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="21sp"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@+id/weight_text"
+            app:layout_constraintTop_toBottomOf="@+id/age_text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/img_layout_2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/age"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="22sp"
-        android:gravity="center_vertical"
+        android:layout_margin="10dp"
+        android:background="@drawable/round_text_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_layout_1">
 
-    <TextView
-        android:id="@+id/height_text"
-        android:layout_width="80dp"
+        <ImageView
+            android:id="@+id/activity_pic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_activity"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/goal_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/goal"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="21sp"
+            app:layout_constraintStart_toEndOf="@+id/activity_pic"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/activity_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/exercise"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="21sp"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@+id/activity_pic"
+            app:layout_constraintTop_toBottomOf="@+id/goal_text" />
+
+        <TextView
+            android:id="@+id/diet_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/diet_type"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="21sp"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@+id/activity_pic"
+            app:layout_constraintTop_toBottomOf="@+id/activity_text" />
+
+        <TextView
+            android:id="@+id/goal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="21sp"
+            app:layout_constraintStart_toEndOf="@+id/goal_text"
+            app:layout_constraintTop_toTopOf="parent"  />
+
+        <TextView
+            android:id="@+id/activity_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="21sp"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@+id/activity_text"
+            app:layout_constraintTop_toBottomOf="@+id/goal_text" />
+
+        <TextView
+            android:id="@+id/diet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="21sp"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@+id/diet_text"
+            app:layout_constraintTop_toBottomOf="@+id/activity_level" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/img_layout_3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/height"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="22sp"
-        android:gravity="center_vertical"
+        android:layout_margin="10dp"
+        android:background="@drawable/round_text_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/age_text" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_layout_2"
+        >
 
-    <TextView
-        android:id="@+id/weight_text"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/weight"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="22sp"
-        android:gravity="center_vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/height_text" />
+        <ImageView
+            android:id="@+id/meal_pic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_meal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/age"
-        android:layout_width="90dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="5dp"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="22sp"
-        android:gravity="center_vertical"
-        app:layout_constraintStart_toEndOf="@+id/age_text"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <TextView
-        android:id="@+id/height"
-        android:layout_width="90dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="5dp"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="22sp"
-        android:gravity="center_vertical"
-        app:layout_constraintStart_toEndOf="@+id/height_text"
-        app:layout_constraintTop_toBottomOf="@+id/age_text" />
+        <TextView
+            android:id="@+id/carbs_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/carbs_with"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="21sp"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fat_text"  />
 
-    <TextView
-        android:id="@+id/weight"
-        android:layout_width="90dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="5dp"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="22sp"
-        android:gravity="center_vertical"
-        app:layout_constraintStart_toEndOf="@+id/weight_text"
-        app:layout_constraintTop_toBottomOf="@+id/height_text" />
+        <TextView
+            android:id="@+id/protein_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/protein_low"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="21sp"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/carbs_text" />
+
+        <TextView
+            android:id="@+id/fat_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/fat_low"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="21sp"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"  />
+
+        <TextView
+            android:id="@+id/carbs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="21sp"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@+id/carbs_text"
+            app:layout_constraintTop_toBottomOf="@+id/fat" />
+
+        <TextView
+            android:id="@+id/protein"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="21sp"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@+id/protein_text"
+            app:layout_constraintTop_toBottomOf="@+id/carbs_text" />
+
+        <TextView
+            android:id="@+id/fat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="21sp"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@+id/fat_text"
+            app:layout_constraintTop_toTopOf="parent"  />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/new_kcal"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/round_text_view"
         android:text="@string/calculate_new"
         android:textColor="@color/colorTextPrimary"
@@ -129,109 +343,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/calories_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/calorie_need"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="24sp"
-        android:gravity="center_vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_pic" />
-
-    <TextView
-        android:id="@+id/carbs_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/carbs_need"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="24sp"
-        android:gravity="center_vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calories_text" />
-
-    <TextView
-        android:id="@+id/protein_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/protein_need"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="24sp"
-        android:gravity="center_vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/carbs_text" />
-
-    <TextView
-        android:id="@+id/fat_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/fat_need"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="24sp"
-        android:gravity="center_vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/protein_text" />
-
-    <TextView
-        android:id="@+id/calories"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="24sp"
-        android:gravity="center_vertical"
-        app:layout_constraintStart_toEndOf="@+id/calories_text"
-        app:layout_constraintTop_toBottomOf="@+id/profile_pic" />
-
-    <TextView
-        android:id="@+id/carbs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="30dp"
-        android:textStyle="bold"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="24sp"
-        android:gravity="center_vertical"
-        app:layout_constraintStart_toEndOf="@+id/carbs_text"
-        app:layout_constraintTop_toBottomOf="@+id/calories_text" />
-
-    <TextView
-        android:id="@+id/protein"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="30dp"
-        android:textStyle="bold"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="24sp"
-        android:gravity="center_vertical"
-        app:layout_constraintStart_toEndOf="@+id/protein_text"
-        app:layout_constraintTop_toBottomOf="@+id/carbs_text" />
-
-    <TextView
-        android:id="@+id/fat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="30dp"
-        android:textStyle="bold"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="24sp"
-        android:gravity="center_vertical"
-        app:layout_constraintStart_toEndOf="@+id/fat_text"
-        app:layout_constraintTop_toBottomOf="@+id/protein_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,5 +8,8 @@ data class UserData(
     val calories: Int,
     val carbohydrates: Int,
     val protein: Int,
-    val fat: Int
+    val fat: Int,
+    val activityLevel: String,
+    val dietType: String,
+    val goal: String
 )

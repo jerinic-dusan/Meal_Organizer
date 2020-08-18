@@ -1,5 +1,6 @@
 package app.meal_planner.presentation.viewmodel
 
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import app.meal_planner.data.models.UserData
@@ -15,59 +16,21 @@ class UserDataViewModel(private val userDataRepository: UserDataRepository): Vie
 
     override val exists: MutableLiveData<UserData> = MutableLiveData()
     override val remainingData: MutableLiveData<RemainingData> = MutableLiveData()
+
     override val dailyData: MutableLiveData<RemainingData> = MutableLiveData()
     private val subscriptions = CompositeDisposable()
 
-    override fun getExistingData(){
-        val subscription = userDataRepository.getExistingData().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(
-            {
-                exists.value = it
-                calculateDailyData()
-            },
-            {
-                Timber.e(it)
-            },
-            {
-//                Timber.e("On complete")
-            }
-        )
-        subscriptions.add(subscription)
-    }
-
     override fun setExistingData(data: UserData){
-        val subscription = userDataRepository.setExistingData(data).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(
-            {
-//                Timber.e("User data inserted")
-            },
+        val subscription = userDataRepository.setExistingData(data).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe({},
             {
                 Timber.e(it)
-            }
-        )
-        subscriptions.add(subscription)
-    }
-
-    override fun getRemainingData(){
-        val subscription = userDataRepository.getRemainingData().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(
-            {
-                remainingData.value = it
-                calculateDailyData()
-            },
-            {
-                Timber.e(it)
-            },
-            {
-//                Timber.e("On complete")
             }
         )
         subscriptions.add(subscription)
     }
 
     override fun setRemainingData(data: RemainingData){
-        val subscription = userDataRepository.setRemainingData(data).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(
-            {
-//                Timber.e("User remaining data inserted")
-
-            },
+        val subscription = userDataRepository.setRemainingData(data).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe({},
             {
                 Timber.e(it)
             }
@@ -80,18 +43,6 @@ class UserDataViewModel(private val userDataRepository: UserDataRepository): Vie
         super.onCleared()
     }
 
-    override fun saveDailyProgress() {
-        //TODO SAVE TO DB
-    }
-
-    override fun getDailyData() {
-        TODO("Not yet implemented")
-    }
-
-    override fun setDailyData(data: RemainingData) {
-        TODO("Not yet implemented")
-    }
-
     override fun calculateDailyData() {
         dailyData.value = RemainingData(
             exists.value!!.calories - remainingData.value!!.calories,
@@ -99,7 +50,20 @@ class UserDataViewModel(private val userDataRepository: UserDataRepository): Vie
             exists.value!!.protein - remainingData.value!!.protein,
             exists.value!!.fat - remainingData.value!!.fat
         )
-        Timber.e("${dailyData.value}")
+    }
+
+    override fun getData() {
+        val subscription = userDataRepository.getData().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(
+            {
+                exists.value = it.userData
+                remainingData.value = it.remainingData
+                calculateDailyData()
+            },
+            {
+                Timber.e(it)
+            }
+        )
+        subscriptions.add(subscription)
     }
 
 }

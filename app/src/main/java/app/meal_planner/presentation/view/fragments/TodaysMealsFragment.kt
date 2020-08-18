@@ -29,12 +29,13 @@ import app.meal_planner.presentation.view.states.MealState
 import app.meal_planner.presentation.viewmodel.DailyReportViewModel
 import app.meal_planner.presentation.viewmodel.MealsViewModel
 import app.meal_planner.presentation.viewmodel.UserDataViewModel
+import app.meal_planner.utilities.CalendarUtils
 import kotlinx.android.synthetic.main.fragment_todays_meals.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import timber.log.Timber
 
 
-class TodaysMealsFragment : Fragment(R.layout.fragment_todays_meals) {
+class TodaysMealsFragment : Fragment(R.layout.fragment_todays_meals), CalendarUtils {
 
     private val userDataViewModel: UserDataContract.ViewModel by sharedViewModel<UserDataViewModel>()
     private val mealViewModel: MealsContract.ViewModel by sharedViewModel<MealsViewModel>()
@@ -113,8 +114,7 @@ class TodaysMealsFragment : Fragment(R.layout.fragment_todays_meals) {
     }
 
     private fun initFields() {
-        userDataViewModel.getRemainingData()
-        userDataViewModel.getExistingData()
+        userDataViewModel.getData()
     }
 
     @SuppressLint("SetTextI18n")
@@ -134,7 +134,7 @@ class TodaysMealsFragment : Fragment(R.layout.fragment_todays_meals) {
     private fun renderState(state: MealState) {
         when(state){
             is MealState.Success -> {
-                var list = mutableListOf<MealWithItems>()
+                val list = mutableListOf<MealWithItems>()
                 state.meals.forEach { mealWithItems ->
                     if (mealWithItems.meal.today){
                         list.add(mealWithItems)
@@ -175,13 +175,13 @@ class TodaysMealsFragment : Fragment(R.layout.fragment_todays_meals) {
         }
 
         userDataViewModel.setRemainingData(RemainingData(kcalOld - kcal, carbsOld - carbs, proteinOld - protein, fatOld - fat))
-        userDataViewModel.getRemainingData()
+        userDataViewModel.getData()
     }
 
     private fun resetMeals() {
         mealViewModel.dailyReset()
         val data = userDataViewModel.dailyData.value
-        dailyReportViewModel.getTodaysReport(DailyReportEntity(0, data!!.calories, data.carbohydrates, data.protein, data.fat))
+        dailyReportViewModel.getTodaysReport(DailyReportEntity(0, data!!.calories, data.carbohydrates, data.protein, data.fat, calculateDate(-1)))
         dailyReportViewModel.deleteOlderReports()
     }
 

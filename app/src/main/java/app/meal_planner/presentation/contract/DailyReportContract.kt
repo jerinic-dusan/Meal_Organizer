@@ -11,11 +11,11 @@ interface DailyReportContract {
         val lastThirtyDays: LiveData<DailyReportState>
 
         fun saveDailyReport(dailyReport: DailyReportEntity)
-        fun getHistoryOfDailyReports()
         fun getLastSevenDays()
         fun getLastThirtyDays()
         fun deleteOlderReports()
         fun getTodaysReport(dailyReport: DailyReportEntity)
         fun updateTodaysReport(dailyReport: DailyReportEntity)
+        fun deleteAll()
     }
 }

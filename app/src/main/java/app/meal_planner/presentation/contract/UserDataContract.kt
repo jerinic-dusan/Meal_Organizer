@@ -10,13 +10,9 @@ interface UserDataContract {
         val remainingData: LiveData<RemainingData>
         val dailyData: LiveData<RemainingData>
 
-        fun getExistingData()
         fun setExistingData(data: UserData)
-        fun getRemainingData()
         fun setRemainingData(data: RemainingData)
-        fun saveDailyProgress()
-        fun setDailyData(data: RemainingData)
-        fun getDailyData()
         fun calculateDailyData()
+        fun getData()
     }
 }

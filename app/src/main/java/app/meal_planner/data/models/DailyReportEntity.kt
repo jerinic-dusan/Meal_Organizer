@@ -11,5 +11,5 @@ data class DailyReportEntity(
     val carbs: Int,
     val protein: Int,
     val fat: Int,
-    val date: Date = Date()
+    var date: Date = Date()
 )

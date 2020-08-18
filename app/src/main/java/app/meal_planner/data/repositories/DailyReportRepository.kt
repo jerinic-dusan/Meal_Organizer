@@ -13,4 +13,5 @@ interface DailyReportRepository {
     fun deleteOlderReports(): Completable
     fun getTodaysReport(): Observable<DailyReportEntity>
     fun updateTodaysReport(dailyReport: DailyReportEntity): Completable
+    fun deleteAll(): Completable
 }

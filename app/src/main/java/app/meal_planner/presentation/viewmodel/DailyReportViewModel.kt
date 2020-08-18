@@ -1,5 +1,6 @@
 package app.meal_planner.presentation.viewmodel
 
+import android.annotation.SuppressLint
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import app.meal_planner.data.models.DailyReportEntity
@@ -10,6 +11,9 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.time.days
 
 class DailyReportViewModel(private val dailyReportRepository: DailyReportRepository): ViewModel(), DailyReportContract.ViewModel  {
 
@@ -17,20 +21,17 @@ class DailyReportViewModel(private val dailyReportRepository: DailyReportReposit
     override val lastThirtyDays: MutableLiveData<DailyReportState> = MutableLiveData()
     private val subscriptions = CompositeDisposable()
 
+    @SuppressLint("SimpleDateFormat")
     override fun getTodaysReport(dailyReport: DailyReportEntity) {
-        Timber.e("BEFORE ${dailyReport.date}")
         val subscription = dailyReportRepository.getTodaysReport().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(
             {
-                Timber.e("$it")
-                if (it.id == (-666).toLong()){
+                if (it.id == (-1).toLong()){
                     saveDailyReport(dailyReport)
                 }else{
-                    Timber.e("AFTER ${it.date} ${dailyReport.date}")
-                    if (it.date == dailyReport.date){
-                        Timber.e("update")
+                    val dateFormatter = SimpleDateFormat("EEEMMMyy")
+                    if (dateFormatter.format(it.date).compareTo(dateFormatter.format(dailyReport.date)) == 0){
                         updateTodaysReport(DailyReportEntity(it.id, dailyReport.kcal, dailyReport.carbs, dailyReport.protein, dailyReport.fat, dailyReport.date))
                     }else{
-                        Timber.e("saved")
                         saveDailyReport(dailyReport)
                     }
                 }
@@ -66,11 +67,6 @@ class DailyReportViewModel(private val dailyReportRepository: DailyReportReposit
         subscriptions.add(subscription)
     }
 
-    override fun getHistoryOfDailyReports() {
-        getLastSevenDays()
-        getLastThirtyDays()
-    }
-
     override fun getLastSevenDays() {
         val subscription = dailyReportRepository.getLastSevenDays().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(
             {
@@ -101,6 +97,18 @@ class DailyReportViewModel(private val dailyReportRepository: DailyReportReposit
         val subscription = dailyReportRepository.deleteOlderReports().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(
             {
                 Timber.e("Deleted older reports")
+            },
+            {
+                Timber.e(it)
+            }
+        )
+        subscriptions.add(subscription)
+    }
+
+    override fun deleteAll() {
+        val subscription = dailyReportRepository.deleteAll().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(
+            {
+                Timber.e("Deleted all reports")
             },
             {
                 Timber.e(it)

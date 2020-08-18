@@ -37,6 +37,10 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+
 }
 
 dependencies {
@@ -118,4 +122,5 @@ dependencies {
 
     implementation 'com.github.clans:fab:1.6.2'
     implementation 'com.mikhaellopez:circularprogressbar:3.0.3'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 }

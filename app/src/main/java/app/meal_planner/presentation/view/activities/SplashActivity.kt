@@ -5,13 +5,16 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import app.meal_planner.R
+import app.meal_planner.presentation.contract.DailyReportContract
 import app.meal_planner.presentation.contract.UserDataContract
+import app.meal_planner.presentation.viewmodel.DailyReportViewModel
 import app.meal_planner.presentation.viewmodel.UserDataViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SplashActivity : AppCompatActivity(R.layout.activity_splash){
 
     private val userDataViewModel: UserDataContract.ViewModel by viewModel<UserDataViewModel>()
+    private val dailyReportViewModel: DailyReportContract.ViewModel by viewModel<DailyReportViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +35,6 @@ class SplashActivity : AppCompatActivity(R.layout.activity_splash){
             startActivity(intent)
             finish()
         })
-        userDataViewModel.getRemainingData()
-        userDataViewModel.getExistingData()
+        userDataViewModel.getData()
     }
 }

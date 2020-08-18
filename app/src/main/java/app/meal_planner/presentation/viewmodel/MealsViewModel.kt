@@ -22,7 +22,7 @@ class MealsViewModel(private val mealRepository: MealRepository): ViewModel(), M
         val subscription = mealRepository.getMeals().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(
             {
                 mealState.value = MealState.Success(it)
-                Timber.e("Data fetched: $it")
+//                Timber.e("Data fetched: $it")
             },
             {
                 mealState.value = MealState.Error("Error happened while fetching data")

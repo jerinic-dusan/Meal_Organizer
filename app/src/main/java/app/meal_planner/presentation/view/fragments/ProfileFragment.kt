@@ -32,7 +32,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     }
 
     private fun initObservers() {
-        userDataViewModel.getExistingData()
+        userDataViewModel.getData()
     }
 
     @SuppressLint("SetTextI18n")
@@ -53,7 +53,10 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                 df.roundingMode = RoundingMode.HALF_EVEN
                 (df.format(it.weight / 0.45359237)).toString() + "lbs"
             }
-            calories.text = it.calories.toString() + "kcal"
+            activity_level.text = it.activityLevel
+            diet.text = it.dietType
+            goal.text = it.goal
+
             carbs.text = it.carbohydrates.toString() + "g"
             protein.text = it.protein.toString() + "g"
             fat.text = it.fat.toString() + "g"
