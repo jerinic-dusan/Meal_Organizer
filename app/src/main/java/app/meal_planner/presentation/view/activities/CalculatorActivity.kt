@@ -11,9 +11,11 @@ import app.meal_planner.data.models.RemainingData
 import app.meal_planner.modules.dailyReportModule
 import app.meal_planner.presentation.contract.DailyReportContract
 import app.meal_planner.presentation.contract.KcalDataContract
+import app.meal_planner.presentation.contract.MealsContract
 import app.meal_planner.presentation.contract.UserDataContract
 import app.meal_planner.presentation.viewmodel.DailyReportViewModel
 import app.meal_planner.presentation.viewmodel.KcalDataViewModel
+import app.meal_planner.presentation.viewmodel.MealsViewModel
 import app.meal_planner.presentation.viewmodel.UserDataViewModel
 import kotlinx.android.synthetic.main.activity_calculator.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -22,7 +24,7 @@ class CalculatorActivity : AppCompatActivity(R.layout.activity_calculator) {
 
     private val kcalDataViewModel: KcalDataContract.ViewModel by viewModel<KcalDataViewModel>()
     private val userDataViewModel: UserDataContract.ViewModel by viewModel<UserDataViewModel>()
-    private val dailyReportViewModel: DailyReportContract.ViewModel by viewModel<DailyReportViewModel>()
+    private val mealsViewModel: MealsContract.ViewModel by viewModel<MealsViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,6 +83,7 @@ class CalculatorActivity : AppCompatActivity(R.layout.activity_calculator) {
                 //Delete everything
                 //mealsViewModel.deleteAllMeals()
 //                dailyReportViewModel.deleteAll()
+                mealsViewModel.dailyReset()
 
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)

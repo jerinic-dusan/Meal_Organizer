@@ -48,19 +48,19 @@ class ProgressWeekFragment: Fragment(R.layout.fragment_progress_week) {
     }
 
     private fun initObservers() {
-        dailyReportViewModel.lastSevenDays.observe(viewLifecycleOwner, Observer {
+        dailyReportViewModel.lastThirtyDays.observe(viewLifecycleOwner, Observer {
             renderState(it)
         })
-        dailyReportViewModel.getLastSevenDays()
+        dailyReportViewModel.getLastThirtyDays()
     }
 
     private fun renderState(state: DailyReportState) {
         when(state){
             is DailyReportState.Success -> {
-                val days = state.lastXDays
-                setupChart(days)
-                initListeners(days)
-                Timber.e("Success $days")
+                val days = state.lastXDays.reversed().subList(0,7)
+                setupChart(days.reversed())
+                initListeners(days.reversed())
+                Timber.e("Success ${days.reversed()}")
             }
             is DailyReportState.Error -> {
                 Toast.makeText(context, state.message, Toast.LENGTH_SHORT).show()

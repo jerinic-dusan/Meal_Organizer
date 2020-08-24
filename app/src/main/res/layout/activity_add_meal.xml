@@ -144,43 +144,45 @@
 
         <TextView
             android:id="@+id/calories"
-            android:layout_width="150dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:gravity="right"
             android:textColor="@color/colorTextPrimary"
             android:textSize="22sp"
-            android:gravity="right"
-            app:layout_constraintStart_toEndOf="@+id/calories_text"
+            app:layout_constraintEnd_toEndOf="parent"
+
             app:layout_constraintTop_toBottomOf="@+id/total_text" />
 
         <TextView
             android:id="@+id/carbs"
-            android:layout_width="150dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:textColor="@color/colorTextPrimary"
             android:textSize="22sp"
-            android:gravity="right"
-            app:layout_constraintStart_toEndOf="@+id/carbs_text"
+            app:layout_constraintEnd_toEndOf="parent"
+
             app:layout_constraintTop_toBottomOf="@+id/calories_text" />
 
         <TextView
             android:id="@+id/protein"
-            android:layout_width="150dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:textColor="@color/colorTextPrimary"
             android:textSize="22sp"
-            android:gravity="right"
-            app:layout_constraintStart_toEndOf="@+id/protein_text"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/carbs_text" />
 
         <TextView
             android:id="@+id/fat"
-            android:layout_width="150dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:textColor="@color/colorTextPrimary"
             android:textSize="22sp"
-            android:gravity="right"
-            app:layout_constraintStart_toEndOf="@+id/fat_text"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/protein_text" />
 
 

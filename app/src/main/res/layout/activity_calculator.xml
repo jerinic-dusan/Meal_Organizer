@@ -88,7 +88,7 @@
             android:layout_centerInParent="true"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -102,7 +102,7 @@
             android:text="@string/male"
             android:textColor="@color/colorTextPrimary"
             android:textSize="20sp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="10dp"
             app:layout_constraintEnd_toStartOf="@+id/male_or_female"
@@ -116,7 +116,7 @@
             android:text="@string/female"
             android:textColor="@color/colorTextPrimary"
             android:textSize="20sp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginStart="20dp"
             android:layout_marginBottom="10dp"
             app:layout_constraintStart_toEndOf="@+id/male_or_female"
@@ -143,24 +143,24 @@
             android:textSize="20sp"
             android:gravity="center_vertical"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/age"
-            android:layout_width="220dp"
+            android:layout_width="240dp"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
-            android:lines="1"
+            android:hint="@string/example_1"
             android:inputType="number"
-            android:textSize="18sp"
+            android:lines="1"
             android:textColor="@color/colorTextPrimary"
             android:textColorHint="@color/colorTextPrimary"
-            android:hint="@string/example_1"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/text_age"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/text_height"
@@ -170,24 +170,24 @@
             android:textColor="@color/colorTextPrimary"
             android:textSize="20sp"
             android:gravity="center_vertical"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_age" />
 
         <EditText
             android:id="@+id/height"
-            android:layout_width="220dp"
+            android:layout_width="240dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:lines="1"
+            android:layout_marginTop="5dp"
             android:inputType="number"
-            android:textSize="18sp"
+            android:lines="1"
             android:textColor="@color/colorTextPrimary"
             android:textColorHint="@color/colorTextPrimary"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/text_age"
-            app:layout_constraintTop_toBottomOf="@id/age"
-            />
+            app:layout_constraintTop_toBottomOf="@id/age" />
 
         <TextView
             android:id="@+id/text_weight"
@@ -197,24 +197,24 @@
             android:textColor="@color/colorTextPrimary"
             android:textSize="20sp"
             android:gravity="center_vertical"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_height" />
 
         <EditText
             android:id="@+id/weight"
-            android:layout_width="220dp"
+            android:layout_width="240dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:lines="1"
+            android:layout_marginTop="5dp"
             android:inputType="number"
-            android:textSize="18sp"
+            android:lines="1"
             android:textColor="@color/colorTextPrimary"
             android:textColorHint="@color/colorTextPrimary"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/text_age"
-            app:layout_constraintTop_toBottomOf="@id/height"
-            />
+            app:layout_constraintTop_toBottomOf="@id/height" />
 
         <TextView
             android:id="@+id/text_activity"
@@ -224,26 +224,26 @@
             android:textColor="@color/colorTextPrimary"
             android:textSize="20sp"
             android:gravity="center_vertical"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_weight" />
 
         <Spinner
             android:id="@+id/activity"
-            android:layout_width="220dp"
+            android:layout_width="240dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:textSize="18sp"
-            android:textColor="@color/colorTextPrimary"
+            android:layout_marginTop="5dp"
             android:backgroundTint="@color/colorTextPrimary"
+            android:dropDownWidth="235dp"
             android:popupBackground="@color/colorBackgroundLight"
-            android:dropDownWidth="220dp"
             android:popupElevation="5dp"
             android:spinnerMode="dropdown"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/text_activity"
-            app:layout_constraintTop_toBottomOf="@id/weight"
-            />
+            app:layout_constraintTop_toBottomOf="@id/weight" />
 
         <TextView
             android:id="@+id/text_goal"
@@ -253,26 +253,26 @@
             android:textColor="@color/colorTextPrimary"
             android:textSize="20sp"
             android:gravity="center_vertical"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_activity" />
 
         <Spinner
             android:id="@+id/goal"
-            android:layout_width="220dp"
+            android:layout_width="240dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:textSize="18sp"
-            android:textColor="@color/colorTextPrimary"
+            android:layout_marginTop="5dp"
             android:backgroundTint="@color/colorTextPrimary"
+            android:dropDownWidth="235dp"
             android:popupBackground="@color/colorBackgroundLight"
-            android:dropDownWidth="220dp"
             android:popupElevation="5dp"
             android:spinnerMode="dropdown"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/text_goal"
-            app:layout_constraintTop_toBottomOf="@id/activity"
-            />
+            app:layout_constraintTop_toBottomOf="@id/activity" />
 
         <TextView
             android:id="@+id/text_diet"
@@ -282,8 +282,8 @@
             android:textColor="@color/colorTextPrimary"
             android:textSize="20sp"
             android:gravity="center_vertical"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
             android:layout_marginBottom="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_goal"
@@ -291,21 +291,21 @@
 
         <Spinner
             android:id="@+id/diet"
-            android:layout_width="220dp"
+            android:layout_width="240dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="10dp"
-            android:textSize="18sp"
-            android:textColor="@color/colorTextPrimary"
             android:backgroundTint="@color/colorTextPrimary"
+            android:dropDownWidth="235dp"
             android:popupBackground="@color/colorBackgroundLight"
-            android:dropDownWidth="220dp"
             android:popupElevation="5dp"
             android:spinnerMode="dropdown"
-            app:layout_constraintStart_toEndOf="@+id/text_diet"
-            app:layout_constraintTop_toBottomOf="@id/goal"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_diet"
+            app:layout_constraintTop_toBottomOf="@id/goal" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

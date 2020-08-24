@@ -174,7 +174,15 @@ class TodaysMealsFragment : Fragment(R.layout.fragment_todays_meals), CalendarUt
             fat += it.meal.fat
         }
 
-        userDataViewModel.setRemainingData(RemainingData(kcalOld - kcal, carbsOld - carbs, proteinOld - protein, fatOld - fat))
+        var carbsNew = carbsOld - carbs
+        var proteinNew = proteinOld - protein
+        var fatNew = fatOld - fat
+        if (carbsNew < 0) { carbsNew = 0 }
+        if (proteinNew < 0) { proteinNew = 0 }
+        if (fatNew < 0) { fatNew = 0 }
+        val kcalNew = (carbsNew * 4) + (proteinNew * 4) + (fatNew * 9)
+
+        userDataViewModel.setRemainingData(RemainingData(kcalNew, carbsOld - carbs, proteinOld - protein, fatOld - fat))
         userDataViewModel.getData()
     }
 
