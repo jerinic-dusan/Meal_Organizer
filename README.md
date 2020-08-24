@@ -10,6 +10,6 @@ The app will eventually get updates that include a small food database, custom d
 For now it's a simple meal tracker & organizer and I hope anyone that uses it gets a good use out of it.
 
 ## Screenshots
-<img src="https://meal_tracker_1.jpg" width="108" height="234">
+<img src="meal_planner_1.jpg" width="108" height="234">
 
 ### Dusan Jerinic
