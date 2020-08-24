@@ -14,7 +14,5 @@ For now it's a simple meal tracker & organizer and I hope anyone that uses it ge
 
 ## Links
 * [GitHub](https://github.com/jerinic-dusan)
-
 * [Facebook](https://www.facebook.com/dusan.jerinic.7/)
-
 * [Instagram](https://www.instagram.com/jerinic_/)
