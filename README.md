@@ -10,6 +10,6 @@ The app will eventually get updates that include a small food database, custom d
 For now it's a simple meal tracker & organizer and I hope anyone that uses it gets a good use out of it.
 
 ## Screenshots
-<img src="meal_planner_1.jpg" width="108" height="234"><img src="meal_planner_2.jpg" width="108" height="234"><img src="meal_planner_3.jpg" width="108" height="234"><img src="meal_planner_4.jpg" width="108" height="234"><img src="meal_planner_5.jpg" width="108" height="234"><img src="meal_planner_6.jpg" width="108" height="234"><img src="meal_planner_7.jpg" width="108" height="234"><img src="meal_planner_8.jpg" width="108" height="234"><img src="meal_planner_9.jpg" width="108" height="234">
+<img src="meal_planner_1.jpg" width="108" height="234"> <img src="meal_planner_2.jpg" width="108" height="234"><img src="meal_planner_3.jpg" width="108" height="234"><img src="meal_planner_4.jpg" width="108" height="234"><img src="meal_planner_5.jpg" width="108" height="234"><img src="meal_planner_6.jpg" width="108" height="234"><img src="meal_planner_7.jpg" width="108" height="234"><img src="meal_planner_8.jpg" width="108" height="234"><img src="meal_planner_9.jpg" width="108" height="234">
 
 ### Dusan Jerinic
