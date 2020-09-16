@@ -12,6 +12,9 @@ For now it's a simple meal tracker & organizer and I hope anyone that uses it ge
 ## Screenshots
 <img src="meal_planner_1.jpg" width="108" height="234"> <img src="meal_planner_2.jpg" width="108" height="234"> <img src="meal_planner_3.jpg" width="108" height="234"> <img src="meal_planner_4.jpg" width="108" height="234"> <img src="meal_planner_5.jpg" width="108" height="234"> <img src="meal_planner_6.jpg" width="108" height="234"> <img src="meal_planner_7.jpg" width="108" height="234"> <img src="meal_planner_8.jpg" width="108" height="234"> <img src="meal_planner_9.jpg" width="108" height="234">
 
+## Non-commercial use
+This app is my personal project and it does not have direct or indirect income-generating use. It will not be marketed or sold.
+
 ## Links
 * [GitHub](https://github.com/jerinic-dusan)
 * [Facebook](https://www.facebook.com/dusan.jerinic.7/)
